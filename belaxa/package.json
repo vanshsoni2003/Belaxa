@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run move-to-docs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "move-to-docs": "rmdir /s /q docs && mkdir docs && xcopy dist docs /E /I /Y && copy docs\\index.html docs\\404.html"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.12",
